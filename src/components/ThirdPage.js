@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './sidebar.css';
 import './ThirdPage.css';
 import { Input, Select, Button, Modal } from "antd";
+import { useNavigate } from 'react-router-dom';
 
 function ThirdPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,13 +34,23 @@ function ThirdPage() {
     setDescription(event.target.value);
   };
 
+
+  const navigate = useNavigate();
+
+  const goToSecondPage = () => {
+    navigate('/third');
+  };
+  const goToSecondPage1 = () => {
+    navigate('/fourth');
+  };
+
   return (
     <div className="page-container">
       <div className="sidebar">
         <h2>Меню</h2>
         <ul>
-          <li><a href="/third">Информация</a></li>
-          <li><a href="/fourth">Таблица</a></li>
+          <li><a onClick={goToSecondPage}>Информация</a></li>
+          <li><a onClick={goToSecondPage1}>Таблица</a></li>
         </ul>
       </div>
       <div className="content">

@@ -4,6 +4,7 @@ import './ThirdPage.css';
 import 'ag-grid-community/styles/ag-grid.css'; // Основной CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Тема
 import { AgGridReact } from 'ag-grid-react'; // Логика React Grid
+import { useNavigate } from 'react-router-dom';
 
 function FourthPage() {
   // Данные для строк: данные, которые будут отображаться.
@@ -40,13 +41,26 @@ function FourthPage() {
     const selectedRows = event.api.getSelectedRows();
     console.log('Selected rows:', selectedRows);
   };
+
+
+  const navigate = useNavigate();
+
+  const goToSecondPage = () => {
+    navigate('/third');
+  };
+
+  const goToSecondPage1 = () => {
+    navigate('/fourth');
+  };
+
+
   return (
     <div className="page-container">
       <div className="sidebar">
         <h2>Меню</h2>
         <ul>
-          <li><a href="/third">Информация</a></li>
-          <li><a href="/fourth">Таблица</a></li>
+          <li><a onClick={goToSecondPage}>Информация</a></li>
+          <li><a onClick={goToSecondPage1}>Таблица</a></li>
         </ul>
       </div>
       <div className="content">

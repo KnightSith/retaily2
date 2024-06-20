@@ -35,11 +35,12 @@ function ThirdPage() {
   };
 
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
   const goToSecondPage = () => {
     navigate('/third');
   };
+
   const goToSecondPage1 = () => {
     navigate('/fourth');
   };

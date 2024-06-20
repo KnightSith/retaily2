@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './sidebar.css';
 import './ThirdPage.css';
 import 'ag-grid-community/styles/ag-grid.css'; // Основной CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Тема
 import { AgGridReact } from 'ag-grid-react'; // Логика React Grid
 import { useNavigate } from 'react-router-dom';
+import { Modal } from 'antd';
 
 function FourthPage() {
-  // Данные для строк: данные, которые будут отображаться.
   const [rowData, setRowData] = useState([
     { Наименование: 'Пшеница', Цена: 64, вес: 350 },
     { Наименование: 'хлеб', Цена: 33, вес: 350 },
@@ -17,13 +17,14 @@ function FourthPage() {
     { Наименование: 'Сахар', Цена: 206, вес: 2 },
   ]);
 
-  // Определения колонок: определяет и управляет колонками грида.
   const [colDefs, setColDefs] = useState([
     { field: 'Наименование' },
     { field: 'Цена' },
     { field: 'вес' }
   ]);
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null);
   const defaultColDef = {
     flex: 1,
   };
@@ -39,9 +40,19 @@ function FourthPage() {
 
   const onSelectionChanged = (event) => {
     const selectedRows = event.api.getSelectedRows();
-    console.log('Selected rows:', selectedRows);
+    if (selectedRows.length > 0) {
+      setSelectedRow(selectedRows[0]); // Сохраняем выбранную строку
+      setIsModalVisible(true); // Открываем модальное окно
+    }
   };
 
+  const handleModalOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleModalCancel = () => {
+    setIsModalVisible(false);
+  };
 
   const navigate = useNavigate();
 
@@ -52,7 +63,6 @@ function FourthPage() {
   const goToSecondPage1 = () => {
     navigate('/fourth');
   };
-
 
   return (
     <div className="page-container">
@@ -77,6 +87,20 @@ function FourthPage() {
           </div>
         </div>
       </div>
+      <Modal
+        title="Информация о продукте"
+        visible={isModalVisible}
+        onOk={handleModalOk}
+        onCancel={handleModalCancel}
+      >
+        {selectedRow && (
+          <div>
+            <p><strong>Наименование:</strong> {selectedRow.Наименование}</p>
+            <p><strong>Цена:</strong> {selectedRow.Цена}</p>
+            <p><strong>Вес:</strong> {selectedRow.вес}</p>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }

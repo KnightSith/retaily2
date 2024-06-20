@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-container {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 200px; /* Отступ слева для всей страницы, чтобы учесть фиксированную боковую панель */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px; /* Отступ вниз для белого блока */
+    
+  }
+  
+  .block-third {
+    gap: 20px;
+    display: flex;
+    
+  }
+
+  .input {
+    width: 400px;
+  }
+
+  .button{
+    text-align: center;
+  }
+  

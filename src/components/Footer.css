@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  margin-top: auto; /* Прижать футер к нижней части */
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.app-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.app-links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.app-links img {
+  width: 75px; /* Измените размер по необходимости */
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+ 
+}
+
+
+
+.right-content img {
+  width: 24px; /* Размер иконок */
+  height: 24px; /* Размер иконок */
+}

@@ -1,0 +1,109 @@
+.main-content {
+    flex: 1;
+  
+    
+  }
+  
+  .intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+
+}
+.image-container, .other-image {
+  pointer-events: none; /* Отключение событий мыши для изображений */
+}  
+
+.left-image {
+  position: absolute; /* Абсолютное позиционирование */
+  left: 0; /* Положение слева */
+  top: -200px; /* Положение сверху */
+  z-index: 1; /* Устанавливаем слой поверх других элементов */
+}
+.left-image, .other-image {
+  pointer-events: none; /* Отключение событий мыши для изображений */
+}
+.left-image2 {
+  position: absolute; /* Абсолютное позиционирование */
+  left: -100px; /* Положение слева */
+  top: 100px; /* Положение сверху */
+  z-index: 1; /* Устанавливаем слой поверх других элементов */
+}
+.left-image2, .other-image {
+  pointer-events: none; /* Отключение событий мыши для изображений */
+}
+.right-image {
+  position: absolute; /* Абсолютное позиционирование */
+  right: 0; /* Положение  */
+  top: -150px; /* Положение сверху */
+  z-index: 1; /* Устанавливаем слой поверх других элементов */
+}
+.right-image, .other-image {
+  pointer-events: none; /* Отключение событий мыши для изображений */
+}  
+  .info {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Измените это значение, чтобы блоки были ближе друг к другу */
+    padding: 0 20px; /* Добавьте отступы, чтобы блоки не прилипали к краям контейнера */
+  }
+  
+  .info-item {
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: left;
+    margin-bottom: 20px; /* добавляем небольшой отступ между блоками */
+    box-shadow: 0 0 10px rgba(67, 151, 243, 0.5); /* добавляем тень с плавным переходом */
+    border-radius: 10px;
+    font-size: 20px;
+    
+  }
+  .info-item, .other-image {
+    pointer-events: none; /* Отключение событий мыши для изображений */
+  }  
+  .info-item img {
+    max-width: 100%; /* Максимальная ширина изображения будет 100% от родительского элемента */
+    height: auto; /* Высота изображения автоматически меняется, чтобы сохранить пропорции */
+  }
+
+
+.text-overlay {
+    position: absolute;
+    bottom: 20px; /* Расстояние от нижней границы контейнера */
+    left: 20px; /* Расстояние от левой границы контейнера */
+    color: black; /* Цвет текста */
+     /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+    background-color: rgba(0, 0, 0, 0); /* Полупрозрачный фон для читаемости текста */
+    padding: 10px; /* Внутренний отступ */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.intro {
+  position: relative; /* Устанавливаем позиционирование для родительского контейнера */
+}
+
+.white-block {
+  box-shadow: 0 0 10px rgba(67, 151, 243, 0.5);
+  position: absolute;
+  top: -250px; /* Располагаем блок сверху */
+  right: 200px; /* Располагаем блок справа, рядом с изображением */
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  color: #007BFF;
+  width: 200px;
+  font-size: 20px;
+}
+
+.color{
+  color: #007BFF;
+}

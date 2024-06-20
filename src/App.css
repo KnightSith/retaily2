@@ -1,0 +1,23 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+ 
+  
+  
+}
+body {
+  background: linear-gradient(#4397F3, white);
+  background-size: 100% 50%; /* растягиваем градиент на 100% по ширине и на 50% по высоте */
+  background-repeat: no-repeat; /* чтобы градиент не повторялся */
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  background-image: url("/src/Retaily.svg"); /* устанавливаем изображение в качестве заднего фона */
+  background-size: 100% 50%;
+  background-repeat: no-repeat; /* запрещаем повторять изображение */
+}

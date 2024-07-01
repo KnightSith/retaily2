@@ -30,5 +30,6 @@
 }
 
 .sidebar ul li a:hover {
-  background-color: #b8b8b8;
+  cursor: pointer;
 }
+
